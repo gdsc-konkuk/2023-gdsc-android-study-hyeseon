@@ -19,7 +19,7 @@ class EditActivity : BindingActivity<ActivityEditBinding>(R.layout.activity_edit
         super.onCreate(savedInstanceState)
         binding.vm = viewModel
         initSaveBtnClickListener()
-
+        initRootLayoutClickListener()
     }
 
     private fun initSaveBtnClickListener() {
@@ -39,6 +39,12 @@ class EditActivity : BindingActivity<ActivityEditBinding>(R.layout.activity_edit
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
+    private fun initRootLayoutClickListener() {
+        binding.root.setOnClickListener {
+            hideKeyboard(binding.root)
+            binding.etEditNickname.clearFocus()
+        }
+    }
 
     companion object {
         const val MSG_NICKNAME_ISBLANK = "닉네임은 공백일 수 없습니다"
