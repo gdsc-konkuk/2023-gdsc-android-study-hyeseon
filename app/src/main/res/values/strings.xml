@@ -16,6 +16,7 @@
 
     <string name="mypage_group_university">건국대학교 컴퓨터공학부</string>
     <string name="mypage_group_club">GDSC Android</string>
+
     <string name="edit_title">내 정보 수정</string>
     <string name="edit_content">수정할 내용</string>
     <string name="edit_nickname">닉네임</string>
