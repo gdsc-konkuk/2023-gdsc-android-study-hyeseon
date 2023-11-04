@@ -6,7 +6,7 @@ import kr.ac.konkuk.gdsc.hyeseon.R
 import kr.ac.konkuk.gdsc.hyeseon.databinding.FragmentMyPageBinding
 import kr.ac.konkuk.gdsc.hyeseon.util.binding.BindingFragment
 
-class TodoListFragment : BindingFragment<FragmentMyPageBinding>(R.layout.fragment_todolist) {
+class TodoHomeFragment : BindingFragment<FragmentMyPageBinding>(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
