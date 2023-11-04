@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="data"
+            type="kr.ac.konkuk.gdsc.hyeseon.domain.entity.TodoItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,16 +21,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:src="@drawable/ic_home_todo_yet"/>
+            tools:src="@drawable/ic_home_todo_yet"
+            setDoneIcon="@{data.isDone}"/>
 
-        <EditText
+        <TextView
+            android:layout_marginVertical="20dp"
             android:id="@+id/et_home_todo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@id/iv_home_todo"
             android:layout_marginStart="20dp"
             app:layout_constraintTop_toTopOf="parent"
-            android:hint="TODO를 작성해주세요"
+            android:text="@{data.body}"
+            android:textColor="@color/gray_700"
+            android:textAppearance="@style/TextAppearance.GDSC.Content_m_15"
+            tools:text="안녕하세요투두인디요"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

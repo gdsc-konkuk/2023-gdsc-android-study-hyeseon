@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="20dp"
-        tools:context=".presentation.todolist.TodoHomeFragment">
+        tools:context=".presentation.home.HomeFragment">
 
         <TextView
             android:id="@+id/tv_home_title"
