@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="kr.ac.konkuk.gdsc.hyeseon.presentation.mypage.EditViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_edit_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/ic_mypage_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_edit_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/edit_title"
+            android:textAppearance="@style/TextAppearance.GDSC.Headline_b_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_edit_back_button" />
+
+        <ImageView
+            android:id="@+id/iv_edit_profile"
+            android:layout_width="94dp"
+            android:layout_height="94dp"
+            android:layout_marginTop="37dp"
+            android:src="@drawable/img_mypage_konkuk"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_edit_title" />
+
+        <TextView
+            android:id="@+id/tv_edit_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/mypage_name"
+            android:textAppearance="@style/TextAppearance.GDSC.Content_m_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_edit_profile" />
+
+        <TextView
+            android:id="@+id/tv_edit_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="@string/mypage_email"
+            android:textAppearance="@style/TextAppearance.GDSC.Content_m_15"
+            android:textColor="@color/gray_400"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_edit_name" />
+
+
+        <TextView
+            android:id="@+id/tv_edit_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="47dp"
+            android:text="@string/edit_content"
+            android:textAppearance="@style/TextAppearance.GDSC.Content_m_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_edit_email" />
+
+        <LinearLayout
+            android:id="@+id/ll_edit_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="39dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tv_edit_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_nickname"
+                android:textAppearance="@style/TextAppearance.GDSC.Content_m_15" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_edit_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginEnd="44dp"
+                android:hint="@string/edit_nickname_hint"
+                android:text="@={vm._editableNickName}" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="@string/edit_profile"
+            android:textAppearance="@style/TextAppearance.GDSC.Content_m_15"
+            app:layout_constraintStart_toStartOf="@id/ll_edit_nickname"
+            app:layout_constraintTop_toBottomOf="@id/ll_edit_nickname" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="70dp"
+            android:backgroundTint="@color/gray_400"
+            android:paddingHorizontal="50dp"
+            android:text="@string/edit_select"
+            android:textAppearance="@style/TextAppearance.GDSC.Content_m_15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_edit_nickname"
+            app:layout_constraintTop_toTopOf="@id/tv_edit_profile" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
+            android:background="@color/pink"
+            android:enabled="@{vm.inputUiState, default=false}"
+            android:paddingHorizontal="70dp"
+            android:text="@string/edit_save"
+            android:textAppearance="@style/TextAppearance.GDSC.Content_m_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

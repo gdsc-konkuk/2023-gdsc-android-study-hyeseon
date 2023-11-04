@@ -1,3 +1,27 @@
 <resources>
+
+    <!-- mypage  -->
     <string name="app_name">GDSC_Fall_Android_Study</string>
+    <string name="mypage_title">마이페이지</string>
+    <string name="mypage_name">백혜선</string>
+    <string name="mypage_email">konkukbhs@gmail.com</string>
+    <string name="mypage_group_title">소속 단체</string>
+    <string name="mypage_notification">최근 알림</string>
+    <string name="mypage_edit">내 정보 수정</string>
+    <string name="mypage_notice">공지사항</string>
+    <string name="mypage_version">버전</string>
+    <string name="mypage_version_code">1.0.1</string>
+    <string name="mypage_signout">로그아웃</string>
+    <string name="mypage_withdrawl">회원탈퇴</string>
+
+    <string name="mypage_group_university">건국대학교 컴퓨터공학부</string>
+    <string name="mypage_group_club">GDSC Android</string>
+
+    <string name="edit_title">내 정보 수정</string>
+    <string name="edit_content">수정할 내용</string>
+    <string name="edit_nickname">닉네임</string>
+    <string name="edit_nickname_hint">공백은 불가합니다</string>
+    <string name="edit_profile">프로필 사진</string>
+    <string name="edit_select">선택하기</string>
+    <string name="edit_save">저장하기</string>
 </resources>
