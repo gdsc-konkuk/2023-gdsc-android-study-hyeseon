@@ -1,12 +1,12 @@
-package kr.ac.konkuk.gdsc.hyeseon.presentation.mypage
+package kr.ac.konkuk.gdsc.hyeseon.presentation
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import kr.ac.konkuk.gdsc.hyeseon.R
 
-class MyPageActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_page)
+        setContentView(R.layout.activity_main)
     }
 }
