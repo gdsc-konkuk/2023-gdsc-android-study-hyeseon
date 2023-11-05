@@ -22,7 +22,11 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home
     }
 
     private fun initAdapter() {
-        homeAdapter = HomeAdapter()
+        homeAdapter = HomeAdapter(
+            onDoneBtnClicked = { todoItem ->
+                viewModel.updateDoneBtn(todoItem)
+            }
+        )
         binding.rvHomeTodolist.adapter = homeAdapter
     }
 

@@ -22,6 +22,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:src="@drawable/ic_home_todo_yet"
+            android:padding="10dp"
             setDoneIcon="@{data.isDone}"/>
 
         <TextView
