@@ -24,4 +24,7 @@
     <string name="edit_profile">프로필 사진</string>
     <string name="edit_select">선택하기</string>
     <string name="edit_save">저장하기</string>
+
+    <string name="main_home">홈</string>
+    <string name="main_mypage">마이페이지</string>
 </resources>

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.GDSC_Fall_Android_Study"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.mypage.EditActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +22,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".presentation.mypage.EditActivity"/>
 
-        <activity android:name=".presentation.mypage.MyPageActivity"/>
     </application>
 
 </manifest>
