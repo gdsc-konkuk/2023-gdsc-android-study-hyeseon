@@ -51,13 +51,13 @@ class EditActivity : BindingActivity<ActivityEditBinding>(R.layout.activity_edit
 
     private fun initSaveBtnClickListener() {
         binding.btnEditSave.setOnClickListener {
-            setResult()
+            setResultToMyPage()
         }
     }
 
-    private fun setResult() {
+    private fun setResultToMyPage() {
         val intent = Intent()
-        intent.putExtra("name", viewModel.editableNickName)
+        intent.putExtra(KEY_NICKNAME_TO_MYPAGE, viewModel.editableNickName)
         setResult(RESULT_OK, intent)
         if (!isFinishing) finish()
     }
@@ -72,5 +72,6 @@ class EditActivity : BindingActivity<ActivityEditBinding>(R.layout.activity_edit
 
     companion object {
         const val MSG_NICKNAME_ISBLANK = "닉네임은 공백일 수 없습니다"
+        const val KEY_NICKNAME_TO_MYPAGE = "nickname"
     }
 }
