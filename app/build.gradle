@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
+    id 'kotlinx-serialization'
 }
 Properties properties = new Properties()
 FileInputStream localPropertiesStream = new FileInputStream(project.rootProject.file('local.properties'))
