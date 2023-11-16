@@ -14,7 +14,7 @@ import kr.ac.konkuk.gdsc.hyeseon.util.binding.BindingFragment
 
 class HomeFragment : BindingFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private val viewModel by viewModels<HomeViewModel>()
-    lateinit var homeAdapter: HomeAdapter
+    private lateinit var homeAdapter: HomeAdapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()

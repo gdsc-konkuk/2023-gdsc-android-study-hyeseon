@@ -20,4 +20,8 @@ class HomeViewModel : ViewModel() {
         }
         _todoList.value = updatedList
     }
+
+    fun getToDoDoneCount(): Int {
+        return _todoList.value.count { it.isDone }
+    }
 }
