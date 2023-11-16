@@ -22,9 +22,25 @@ class EditActivity : BindingActivity<ActivityEditBinding>(R.layout.activity_edit
         super.onCreate(savedInstanceState)
         binding.vm = viewModel
         initSaveBtnClickListener()
-        checkIsNickNameValid()
         initEditTextWatcher()
+        initEditTextFocusListener()
         initRootLayoutClickListener()
+        updateNickNameFromResult()
+        checkIsNickNameValid()
+    }
+
+    private fun updateNickNameFromResult() {
+        val nickname = intent.getStringExtra(KEY_NICKNAME_FROM_MYPAGE).toString()
+        viewModel._editableNickName.value = nickname
+        binding.tvEditName.text = nickname
+    }
+
+    private fun initEditTextFocusListener() {
+        binding.etEditNickname.setOnFocusChangeListener { v, hasFocus ->
+            if (hasFocus) {
+                binding.etEditNickname.setText("")
+            }
+        }
     }
 
     private fun initEditTextWatcher() {
@@ -73,5 +89,6 @@ class EditActivity : BindingActivity<ActivityEditBinding>(R.layout.activity_edit
     companion object {
         const val MSG_NICKNAME_ISBLANK = "닉네임은 공백일 수 없습니다"
         const val KEY_NICKNAME_TO_MYPAGE = "nickname"
+        const val KEY_NICKNAME_FROM_MYPAGE = "nickname"
     }
 }

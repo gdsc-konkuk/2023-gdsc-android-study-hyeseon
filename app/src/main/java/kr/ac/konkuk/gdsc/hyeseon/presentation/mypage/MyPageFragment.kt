@@ -25,7 +25,7 @@ class MyPageFragment : BindingFragment<FragmentMyPageBinding>(R.layout.fragment_
         resultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 if (result.resultCode == Activity.RESULT_OK) {
-                    val name = result.data?.getStringExtra(KEY_NICKNAME_TO_EDIT) ?: ""
+                    val name = result.data?.getStringExtra(KEY_NICKNAME_FROM_EDIT) ?: ""
                     binding.tvMypageName.text = name
                 }
             }
@@ -33,10 +33,13 @@ class MyPageFragment : BindingFragment<FragmentMyPageBinding>(R.layout.fragment_
 
     private fun navigateToEdit() {
         binding.ivMypageEdit.setOnClickListener {
-            resultLauncher.launch(Intent(requireContext(), EditActivity::class.java))
+            val intent = Intent(requireContext(), EditActivity::class.java)
+            intent.putExtra(KEY_NICKNAME_TO_EDIT, binding.tvMypageName.text.toString())
+            resultLauncher.launch(intent)
         }
     }
     companion object {
         const val KEY_NICKNAME_TO_EDIT = "nickname"
+        const val KEY_NICKNAME_FROM_EDIT = "nickname"
     }
 }
