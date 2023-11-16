@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="data"
+            type="kr.ac.konkuk.gdsc.hyeseon.domain.entity.Img" />
     </data>
 
     <ScrollView
@@ -43,7 +46,7 @@
                 android:layout_height="80dp"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="35dp"
-                android:src="@drawable/img_mypage_konkuk"
+                imageUrl="@{data.url}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_mypage_title" />
 
