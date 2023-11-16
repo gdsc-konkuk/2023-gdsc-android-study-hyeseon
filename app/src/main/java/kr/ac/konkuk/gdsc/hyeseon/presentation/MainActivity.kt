@@ -4,13 +4,14 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import dagger.hilt.android.AndroidEntryPoint
 import kr.ac.konkuk.gdsc.hyeseon.R
 import kr.ac.konkuk.gdsc.hyeseon.databinding.ActivityMainBinding
 import kr.ac.konkuk.gdsc.hyeseon.presentation.createtodo.CreateTodoFragment
 import kr.ac.konkuk.gdsc.hyeseon.presentation.home.HomeFragment
 import kr.ac.konkuk.gdsc.hyeseon.presentation.mypage.MyPageFragment
 import kr.ac.konkuk.gdsc.hyeseon.util.binding.BindingActivity
-
+@AndroidEntryPoint
 class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {

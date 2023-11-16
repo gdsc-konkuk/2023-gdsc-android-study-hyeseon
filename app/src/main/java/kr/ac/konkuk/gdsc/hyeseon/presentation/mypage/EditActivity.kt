@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import kr.ac.konkuk.gdsc.hyeseon.R
 import kr.ac.konkuk.gdsc.hyeseon.databinding.ActivityEditBinding
@@ -15,7 +16,7 @@ import kr.ac.konkuk.gdsc.hyeseon.util.activity.toast
 import kr.ac.konkuk.gdsc.hyeseon.util.binding.BindingActivity
 import kr.ac.konkuk.gdsc.hyeseon.util.context.hideKeyboard
 import kr.ac.konkuk.gdsc.hyeseon.util.view.InputUiState
-
+@AndroidEntryPoint
 class EditActivity : BindingActivity<ActivityEditBinding>(R.layout.activity_edit) {
     private val viewModel by viewModels<EditViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {

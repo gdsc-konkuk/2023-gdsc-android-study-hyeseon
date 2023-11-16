@@ -7,12 +7,15 @@ import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import kr.ac.konkuk.gdsc.hyeseon.R
 import kr.ac.konkuk.gdsc.hyeseon.databinding.FragmentMyPageBinding
 import kr.ac.konkuk.gdsc.hyeseon.presentation.home.HomeViewModel
 import kr.ac.konkuk.gdsc.hyeseon.util.binding.BindingFragment
+import javax.inject.Inject
 
-class MyPageFragment : BindingFragment<FragmentMyPageBinding>(R.layout.fragment_my_page) {
+@AndroidEntryPoint
+class MyPageFragment @Inject constructor(): BindingFragment<FragmentMyPageBinding>(R.layout.fragment_my_page) {
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
     private val viewModel by viewModels<HomeViewModel>()
 
