@@ -1,5 +1,6 @@
 package kr.ac.konkuk.gdsc.hyeseon.presentation.mypage
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -21,6 +22,7 @@ class EditActivity : BindingActivity<ActivityEditBinding>(R.layout.activity_edit
         super.onCreate(savedInstanceState)
         binding.vm = viewModel
         initSaveBtnClickListener()
+        checkIsNickNameValid()
         initEditTextWatcher()
         initRootLayoutClickListener()
     }
@@ -35,7 +37,7 @@ class EditActivity : BindingActivity<ActivityEditBinding>(R.layout.activity_edit
         })
     }
 
-    private fun initSaveBtnClickListener() {
+    private fun checkIsNickNameValid() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.isValidNickName.collect { value ->
@@ -46,6 +48,20 @@ class EditActivity : BindingActivity<ActivityEditBinding>(R.layout.activity_edit
             }
         }
     }
+
+    private fun initSaveBtnClickListener() {
+        binding.btnEditSave.setOnClickListener {
+            setResult()
+        }
+    }
+
+    private fun setResult() {
+        val intent = Intent()
+        intent.putExtra("name", viewModel.editableNickName)
+        setResult(RESULT_OK, intent)
+        if (!isFinishing) finish()
+    }
+
 
     private fun initRootLayoutClickListener() {
         binding.root.setOnClickListener {
