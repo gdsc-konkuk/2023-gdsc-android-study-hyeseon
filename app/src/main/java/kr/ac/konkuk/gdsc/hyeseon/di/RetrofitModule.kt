@@ -51,7 +51,18 @@ object RetrofitModule {
         .addInterceptor(interceptor)
         .build()
 
-
+    @Provides
+    @Singleton
+    @Auth
+    fun provideAuthInterceptor(): Interceptor = Interceptor { chain ->
+        val url = chain.request().url.newBuilder()
+            .addQueryParameter("client_id", BuildConfig.ACCESS_KEY)
+            .build()
+        val request = chain.request().newBuilder()
+            .url(url)
+            .build()
+        chain.proceed(request)
+    }
 
 
     @Provides
