@@ -14,7 +14,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val todoRepository: TodoRepository
-): ViewModel() {
+) : ViewModel() {
     private val _todoList = MutableStateFlow<List<TodoItem>>(emptyList())
     val todoList: StateFlow<List<TodoItem>> = _todoList
 
@@ -40,7 +40,8 @@ class HomeViewModel @Inject constructor(
     }
 
 
-    fun getToDoDoneCount(): Int {
-        return _todoList.value.count { it.isDone }
+    suspend fun getToDoDoneCount(): Int {
+        return todoRepository.getAllTodos().first().count { it.isDone }
     }
+
 }

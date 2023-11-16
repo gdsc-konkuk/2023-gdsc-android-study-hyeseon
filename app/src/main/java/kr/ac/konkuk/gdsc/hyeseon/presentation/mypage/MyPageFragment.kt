@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import kr.ac.konkuk.gdsc.hyeseon.R
 import kr.ac.konkuk.gdsc.hyeseon.databinding.FragmentMyPageBinding
 import kr.ac.konkuk.gdsc.hyeseon.presentation.home.HomeViewModel
@@ -52,8 +53,10 @@ class MyPageFragment : BindingFragment<FragmentMyPageBinding>(R.layout.fragment_
     }
 
     private fun getTodoDoneCount() {
-        binding.layoutMypageTodo.tvTodoCount.text =
-            getString(R.string.mypage_todo_count, homeViewModel.getToDoDoneCount())
+        viewLifecycleOwner.lifecycleScope.launch {
+            binding.layoutMypageTodo.tvTodoCount.text =
+                getString(R.string.mypage_todo_count, homeViewModel.getToDoDoneCount())
+        }
     }
 
     private fun setUserImg() {
