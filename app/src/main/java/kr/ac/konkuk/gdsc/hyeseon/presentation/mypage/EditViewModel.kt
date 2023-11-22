@@ -2,6 +2,7 @@ package kr.ac.konkuk.gdsc.hyeseon.presentation.mypage
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -9,8 +10,10 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kr.ac.konkuk.gdsc.hyeseon.util.code.ErrorCode
 import kr.ac.konkuk.gdsc.hyeseon.util.view.InputUiState
+import javax.inject.Inject
 
-class EditViewModel : ViewModel() {
+@HiltViewModel
+class EditViewModel @Inject constructor(): ViewModel() {
 
     val _editableNickName = MutableStateFlow("")
     val editableNickName: String get() = _editableNickName.value
